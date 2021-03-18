@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Names -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
@@ -12,5 +13,12 @@
     <color name="eclipse_light">#626262</color>
     <color name="eclipse_dark">#121212</color>
 
+    <color name="grey_100">#ebebeb</color>
+    <color name="grey_700">#8E8e93</color>
+
     <color name="red">#ef5350</color>
+
+    <!-- Properties -->
+    <color name="logo_text_color">@color/grey_700</color>
+
 </resources>

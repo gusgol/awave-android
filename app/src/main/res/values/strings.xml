@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Awave</string>
+    <string name="cd_company_logo">Company logo</string>
+    <string name="cl_home_airport">Illustration of a person waiting in the airport</string>
+    <string name="msg_no_itinerary">You don\'t have any itinerary yet</string>
+    <string name="msg_start_creating">Start by creating your next itinerary</string>
 </resources>
