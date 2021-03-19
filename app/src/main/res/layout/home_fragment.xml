@@ -34,6 +34,14 @@
 
     </LinearLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/itineraries"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/itinerary_item"
+        app:layoutManager="LinearLayoutManager" />
+
+
     <LinearLayout
         android:id="@+id/emptyState"
         android:layout_width="match_parent"

@@ -5,4 +5,6 @@
     <dimen name="keyline_2">8dp</dimen>
     <dimen name="keyline_4">16dp</dimen>
     <dimen name="keyline_5">24dp</dimen>
+
+    <dimen name="cornerSize">@dimen/keyline_4</dimen>
 </resources>
