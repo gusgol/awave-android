@@ -7,4 +7,12 @@ interface ItinerariesDataSource {
 
     suspend fun getItineraries(): Result<List<Itinerary>>
 
+    suspend fun getItinerary(id: String): Result<Itinerary>
+
+    suspend fun saveItinerary(itinerary: Itinerary)
+
+    suspend fun updateItinerary(itinerary: Itinerary): Result<Boolean>
+
+    suspend fun deleteItinerary(itinerary: Itinerary)
+
 }

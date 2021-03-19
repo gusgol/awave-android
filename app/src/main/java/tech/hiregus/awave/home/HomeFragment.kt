@@ -38,12 +38,19 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupViews()
         setupBindings()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun setupViews() {
+        binding.create.setOnClickListener {
+            homeViewModel.saveItinerary()
+        }
     }
 
     private fun setupBindings() {

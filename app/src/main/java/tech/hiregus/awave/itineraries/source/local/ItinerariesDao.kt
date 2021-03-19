@@ -21,7 +21,7 @@ interface ItinerariesDao {
      * @return the task with taskId.
      */
     @Query("SELECT * FROM itineraries WHERE id = :id")
-    suspend fun getItineraryById(id: String): Itinerary?
+    suspend fun get(id: String): Itinerary?
 
     /**
      * Insert an itinerary in the database. If the itinerary already exists, replace it.
@@ -29,7 +29,7 @@ interface ItinerariesDao {
      * @param itinerary the itinerary to be inserted.
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertItinerary(itinerary: Itinerary)
+    suspend fun insert(itinerary: Itinerary)
 
     /**
      * Update an itinerary.
@@ -38,7 +38,7 @@ interface ItinerariesDao {
      * @return the number of itineraries updated. This should always be 1.
      */
     @Update
-    suspend fun updateItinerary(itinerary: Itinerary): Int
+    suspend fun update(itinerary: Itinerary): Int
 
     /**
      * Delete an itinerary

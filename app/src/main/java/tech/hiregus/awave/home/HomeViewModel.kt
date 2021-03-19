@@ -9,6 +9,7 @@ import tech.hiregus.awave.R
 import tech.hiregus.awave.data.Result
 import tech.hiregus.awave.itineraries.source.ItinerariesRepository
 import tech.hiregus.awave.home.HomeUiState.*
+import tech.hiregus.awave.itineraries.Itinerary
 
 class HomeViewModel(private val itinerariesRepository: ItinerariesRepository) : ViewModel() {
 
@@ -18,6 +19,12 @@ class HomeViewModel(private val itinerariesRepository: ItinerariesRepository) : 
 
     init {
         getItineraries()
+    }
+
+    fun saveItinerary() {
+        viewModelScope.launch {
+            itinerariesRepository.saveItinerary(Itinerary(title = "Day 1 in Paris"))
+        }
     }
 
     private fun getItineraries() {
