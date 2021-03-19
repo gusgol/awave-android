@@ -5,4 +5,5 @@
     <string name="msg_no_itinerary">You don\'t have any itinerary yet</string>
     <string name="msg_start_creating">Start by creating your next itinerary</string>
     <string name="error_load_itineraries">It was not possible to load your itineraries. Please, try again later</string>
+    <string name="action_create">Create</string>
 </resources>
