@@ -80,6 +80,7 @@ class HomeFragment : Fragment() {
 
     private fun displayEmptyState(active: Boolean) {
         binding.emptyState.isVisible = active
+        binding.itineraries.isVisible = !active
     }
 
 

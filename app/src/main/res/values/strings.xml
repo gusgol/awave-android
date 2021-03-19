@@ -14,5 +14,6 @@
     <string name="title_desc_london">The swinging city</string>
     <string name="title_city_berlin">Berlin</string>
     <string name="title_desc_berlin">Unexpected capital</string>
+    <string name="title_your_itineraries"><![CDATA[Your <b>itineraries</b>]]></string>
 
 </resources>
