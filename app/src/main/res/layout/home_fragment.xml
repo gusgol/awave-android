@@ -39,8 +39,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/itinerary_item"
-        app:layoutManager="LinearLayoutManager" />
-
+        app:layoutManager="LinearLayoutManager"
+        tools:visibility="gone"/>
 
     <LinearLayout
         android:id="@+id/emptyState"
@@ -52,22 +52,21 @@
         tools:visibility="visible">
 
         <TextView
+            style="?textAppearanceHeadline1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/keyline_5"
             android:gravity="start"
             android:padding="@dimen/keyline_4"
-            android:text="@string/msg_no_itinerary"
-            android:textColor="?colorOnBackground"
-            android:textSize="32sp"
-            android:textStyle="bold" />
+            android:text="@string/msg_no_itinerary" />
 
         <TextView
+            style="?textAppearanceSubtitle1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="start"
             android:paddingHorizontal="@dimen/keyline_4"
-            android:text="@string/msg_start_creating"
-            android:textSize="16sp" />
+            android:text="@string/msg_start_creating" />
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/create"

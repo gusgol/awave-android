@@ -30,14 +30,14 @@
 
             <TextView
                 android:id="@+id/title"
-                style="?textAppearanceHeadline5"
+                style="?textAppearanceHeadline3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="@string/title_city_paris" />
 
             <TextView
                 android:id="@+id/description"
-                style="?textAppearanceBody2"
+                style="?textAppearanceSubtitle1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="You selected 10 places" />
