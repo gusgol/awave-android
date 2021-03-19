@@ -6,4 +6,13 @@
     <string name="msg_start_creating">Start by creating your next itinerary</string>
     <string name="error_load_itineraries">It was not possible to load your itineraries. Please, try again later</string>
     <string name="action_create">Create</string>
+
+    <!-- Cities -->
+    <string name="title_city_paris">Paris</string>
+    <string name="title_desc_paris">City of the lights</string>
+    <string name="title_city_london">London</string>
+    <string name="title_desc_london">The swinging city</string>
+    <string name="title_city_berlin">Berlin</string>
+    <string name="title_desc_berlin">Unexpected capital</string>
+
 </resources>
