@@ -1,0 +1,10 @@
+package tech.hiregus.awave.itineraries
+
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import java.util.*
+
+@Entity(tableName = "itineraries")
+data class Itinerary(@PrimaryKey @ColumnInfo(name = "id") var id: String = UUID.randomUUID().toString(),
+                     @ColumnInfo(name = "title") val title: String = "")
