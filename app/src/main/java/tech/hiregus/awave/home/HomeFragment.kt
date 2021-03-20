@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import tech.hiregus.awave.R
 import tech.hiregus.awave.databinding.HomeFragmentBinding
@@ -16,10 +17,6 @@ import tech.hiregus.awave.util.ViewHolderSpacingDecoration
 import timber.log.Timber
 
 class HomeFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = HomeFragment()
-    }
 
     private var _binding: HomeFragmentBinding? = null
     private val binding get() = _binding!!
@@ -53,8 +50,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupViews() {
+        binding.createItineary.setOnClickListener {
+            goToCreateItinerary()
+        }
         binding.create.setOnClickListener {
-            homeViewModel.saveItinerary()
+            goToCreateItinerary()
         }
         with(binding.itineraries) {
             adapter = this@HomeFragment.adapter
@@ -83,5 +83,10 @@ class HomeFragment : Fragment() {
         binding.itineraries.isVisible = !active
     }
 
+    private fun goToCreateItinerary() {
+        homeViewModel.saveItinerary()
+        val action = HomeFragmentDirections.actionHomeToSelectCity()
+        findNavController().navigate(action)
+    }
 
 }
