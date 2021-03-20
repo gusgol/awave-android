@@ -1,6 +1,5 @@
 package tech.hiregus.awave.util.extensions
 
-import android.graphics.drawable.Drawable
 import android.os.Build
 import android.text.Html
 import android.widget.ImageView

@@ -1,46 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".home.HomeFragment">
+    android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        tools:ignore="UseCompoundDrawables">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".home.HomeFragment">
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="@dimen/keyline_4"
-            android:background="@drawable/bg_round"
-            android:contentDescription="@string/cd_company_logo"
-            android:padding="@dimen/keyline_2"
-            android:src="@drawable/ic_map" />
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textAllCaps="true"
-            android:textColor="@color/logo_text_color"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:gravity="center_vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="@dimen/keyline_4"
+                android:background="@drawable/bg_round"
+                android:contentDescription="@string/cd_company_logo"
+                android:padding="@dimen/keyline_2"
+                android:src="@drawable/ic_map" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textAllCaps="true"
+                android:textColor="@color/logo_text_color"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/itineraries"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/itinerary_item"
+            tools:visibility="gone" />
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/itineraries"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/itinerary_item"
-        app:layoutManager="LinearLayoutManager"
-        tools:visibility="gone"/>
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/createItineary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/keyline_4"
+        android:layout_gravity="bottom|center"
+        android:text="@string/action_create_itinerary"
+        app:icon="@drawable/ic_map"/>
 
     <LinearLayout
         android:id="@+id/emptyState"
@@ -49,7 +64,7 @@
         android:gravity="bottom"
         android:orientation="vertical"
         android:visibility="gone"
-        tools:visibility="visible">
+        tools:visibility="gone">
 
         <TextView
             style="?textAppearanceHeadline1"
@@ -72,14 +87,14 @@
             android:id="@+id/create"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginHorizontal="@dimen/keyline_4"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="@dimen/keyline_4"
-            android:layout_marginHorizontal="@dimen/keyline_4"
-            android:layout_gravity="start"
-            android:text="@string/action_create"
             android:gravity="center"
+            android:text="@string/action_create"
             app:backgroundTint="?colorPrimary"
-            app:icon="@null"/>
+            app:icon="@null" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -91,4 +106,4 @@
 
     </LinearLayout>
 
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
