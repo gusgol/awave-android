@@ -16,5 +16,6 @@
     <string name="title_desc_berlin">Unexpected capital</string>
     <string name="title_your_itineraries"><![CDATA[Your <b>itineraries</b>]]></string>
     <string name="action_create_itinerary">Create itinerary</string>
+    <string name="title_where_next">Where next?</string>
 
 </resources>
