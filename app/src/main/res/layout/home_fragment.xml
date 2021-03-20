@@ -44,6 +44,7 @@
             android:layout_height="match_parent"
             app:layoutManager="LinearLayoutManager"
             tools:listitem="@layout/itinerary_item"
+            android:overScrollMode="never"
             tools:visibility="gone" />
 
     </LinearLayout>
