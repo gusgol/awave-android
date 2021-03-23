@@ -11,6 +11,7 @@ import tech.hiregus.awave.itineraries.source.ItinerariesRepository
 import tech.hiregus.awave.home.HomeUiState.*
 import tech.hiregus.awave.itineraries.Itinerary
 
+
 class HomeViewModel(private val itinerariesRepository: ItinerariesRepository) : ViewModel() {
 
     private val _uiState = MutableLiveData<HomeUiState>()
@@ -27,9 +28,9 @@ class HomeViewModel(private val itinerariesRepository: ItinerariesRepository) : 
         }
     }
 
-    private fun getItineraries() {
+    fun getItineraries() {
+        _uiState.value = LoadingState
         viewModelScope.launch {
-            _uiState.value = LoadingState
             val result = itinerariesRepository.getItineraries()
             if (result is Result.Success) {
                 val itineraries = result.data
