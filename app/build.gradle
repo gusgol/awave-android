@@ -38,6 +38,12 @@ android {
         includeAndroidResources = true
         returnDefaultValues = true
     }
+    packagingOptions {
+        exclude "**/attach_hotspot_windows.dll"
+        exclude "META-INF/licenses/**"
+        exclude "META-INF/AL2.0"
+        exclude "META-INF/LGPL2.1"
+    }
 }
 
 dependencies {
@@ -79,6 +85,8 @@ dependencies {
     implementation "io.insert-koin:koin-android-ext:$koin"
     testImplementation "io.insert-koin:koin-test:$koin"
     testImplementation "io.insert-koin:koin-test-junit4:$koin"
+    androidTestImplementation "io.insert-koin:koin-test:$koin"
+    androidTestImplementation "io.insert-koin:koin-test-junit4:$koin"
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit"
