@@ -116,7 +116,7 @@ class HomeFragmentTest : KoinTest {
         }
 
         // WHEN - user clicks the main fab
-        onView(withId(R.id.createItineary)).perform(click())
+        onView(withId(R.id.createItinerary)).perform(click())
 
         // THEN - navigates to itinerary creation
         verify(navController).navigate(

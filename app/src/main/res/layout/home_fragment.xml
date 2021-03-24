@@ -5,17 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/main"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".home.HomeFragment">
+        android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="UseCompoundDrawables">
 
             <ImageView
@@ -40,71 +41,31 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/itineraries"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutManager="LinearLayoutManager"
-            tools:listitem="@layout/itinerary_item"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:overScrollMode="never"
-            tools:visibility="gone" />
-
-    </LinearLayout>
-
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/createItineary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_gravity="bottom|center"
-        android:text="@string/action_create_itinerary"
-        app:icon="@drawable/ic_map"/>
-
-    <LinearLayout
-        android:id="@+id/emptyState"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="bottom"
-        android:orientation="vertical"
-        android:visibility="gone"
-        tools:visibility="gone">
-
-        <TextView
-            style="?textAppearanceHeadline1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/keyline_5"
-            android:gravity="start"
-            android:padding="@dimen/keyline_4"
-            android:text="@string/msg_no_itinerary" />
-
-        <TextView
-            style="?textAppearanceSubtitle1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="start"
-            android:paddingHorizontal="@dimen/keyline_4"
-            android:text="@string/msg_start_creating" />
+            app:layoutManager="LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header"
+            tools:listitem="@layout/itinerary_item" />
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-            android:id="@+id/create"
+            android:id="@+id/createItinerary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:layout_marginHorizontal="@dimen/keyline_4"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="@dimen/keyline_4"
-            android:gravity="center"
-            android:text="@string/action_create"
-            app:backgroundTint="?colorPrimary"
-            app:icon="@null" />
+            android:layout_gravity="bottom|center"
+            android:layout_margin="16dp"
+            android:text="@string/action_create_itinerary"
+            app:icon="@drawable/ic_map"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:contentDescription="@string/cl_home_airport"
-            android:src="@drawable/img_home_empty" />
+        <include android:id="@+id/emptyState"
+            layout="@layout/home_empty_view" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

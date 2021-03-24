@@ -50,10 +50,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupViews() {
-        binding.createItineary.setOnClickListener {
+        binding.createItinerary.setOnClickListener {
             goToCreateItinerary()
         }
-        binding.create.setOnClickListener {
+        binding.emptyState.create.setOnClickListener {
             goToCreateItinerary()
         }
         with(binding.itineraries) {
@@ -79,8 +79,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun displayEmptyState(active: Boolean) {
-        binding.emptyState.isVisible = active
+        binding.emptyState.root.isVisible = active
         binding.itineraries.isVisible = !active
+        binding.createItinerary.isVisible = !active
     }
 
     private fun goToCreateItinerary() {

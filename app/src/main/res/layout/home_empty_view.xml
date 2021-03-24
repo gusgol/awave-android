@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:background="?colorSurface"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:visibility="gone"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/header"
+    tools:showIn="@layout/home_fragment"
+    tools:visibility="visible">
+
+    <TextView
+        style="?textAppearanceHeadline1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/keyline_5"
+        android:gravity="start"
+        android:padding="@dimen/keyline_4"
+        android:text="@string/msg_no_itinerary" />
+
+    <TextView
+        style="?textAppearanceSubtitle1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:paddingHorizontal="@dimen/keyline_4"
+        android:text="@string/msg_start_creating" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginHorizontal="@dimen/keyline_4"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="@dimen/keyline_4"
+        android:gravity="center"
+        android:text="@string/action_create"
+        app:backgroundTint="?colorPrimary"
+        app:icon="@null" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:contentDescription="@string/cl_home_airport"
+        android:src="@drawable/img_home_empty" />
+
+</LinearLayout>
