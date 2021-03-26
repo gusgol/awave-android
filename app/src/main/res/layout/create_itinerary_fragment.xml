@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".createitinerary.CreateItineraryFragment">
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -15,14 +16,36 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize" />
 
+        <EditText
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/keyline_5"
+            android:padding="@dimen/keyline_4"
+            android:textSize="32sp"
+            android:hint="@string/msg_create_itinerary_name_hint"
+            android:background="@null" />
+
         <TextView
             style="?textAppearanceHeadline1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/keyline_5"
             android:gravity="start"
             android:padding="@dimen/keyline_4"
             android:text="@string/title_where_next" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/action_confirm"
+        app:srcCompat="@drawable/ic_arrow_forward"
+        android:visibility="gone"
+        tools:visibility="visible" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -9,7 +9,6 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import tech.hiregus.awave.R
 import tech.hiregus.awave.databinding.HomeFragmentBinding
 import tech.hiregus.awave.itineraries.Itinerary
 import tech.hiregus.awave.itineraries.ui.ItinerariesAdapter
@@ -85,7 +84,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun goToCreateItinerary() {
-        homeViewModel.saveItinerary()
         val action = HomeFragmentDirections.actionHomeToSelectCity()
         findNavController().navigate(action)
     }

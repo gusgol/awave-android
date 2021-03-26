@@ -22,12 +22,6 @@ class HomeViewModel(private val itinerariesRepository: ItinerariesRepository) : 
         getItineraries()
     }
 
-    fun saveItinerary() {
-        viewModelScope.launch {
-            itinerariesRepository.saveItinerary(Itinerary(title = "Day 1 in Paris"))
-        }
-    }
-
     fun getItineraries() {
         _uiState.value = LoadingState
         viewModelScope.launch {

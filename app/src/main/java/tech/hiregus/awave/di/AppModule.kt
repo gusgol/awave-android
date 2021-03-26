@@ -4,6 +4,7 @@ import androidx.room.Room
 import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
+import tech.hiregus.awave.createitinerary.CreateItineraryViewModel
 import tech.hiregus.awave.data.AppDatabase
 import tech.hiregus.awave.data.DB_NAME
 import tech.hiregus.awave.home.HomeViewModel
@@ -26,6 +27,7 @@ val itinerariesModule = module {
     factory { get<AppDatabase>().itineraryDao() }
     factory<ItinerariesDataSource> { ItinerariesLocalDataSource(get()) }
     factory<ItinerariesRepository> { DefaultItinerariesRepository(get()) }
+    viewModel { CreateItineraryViewModel(get()) }
 }
 
 val homeModule = module {

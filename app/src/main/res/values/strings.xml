@@ -17,5 +17,7 @@
     <string name="title_your_itineraries"><![CDATA[Your <b>itineraries</b>]]></string>
     <string name="action_create_itinerary">Create itinerary</string>
     <string name="title_where_next">Where next?</string>
+    <string name="msg_create_itinerary_name_hint">One day in Paris</string>
+    <string name="action_confirm">Confirm</string>
 
 </resources>
