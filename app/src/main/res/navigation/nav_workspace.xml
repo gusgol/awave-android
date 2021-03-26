@@ -14,6 +14,6 @@
     </fragment>
     <fragment
         android:id="@+id/selectCityFragment"
-        android:name="tech.hiregus.awave.createitinerary.SelectCityFragment"
-        tools:layout="@layout/select_city_fragment" />
+        android:name="tech.hiregus.awave.createitinerary.CreateItineraryFragment"
+        tools:layout="@layout/create_itinerary_fragment" />
 </navigation>
