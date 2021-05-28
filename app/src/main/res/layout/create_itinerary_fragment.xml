@@ -24,6 +24,8 @@
             android:padding="@dimen/keyline_4"
             android:textSize="32sp"
             android:hint="@string/msg_create_itinerary_name_hint"
+            android:inputType="text"
+            android:importantForAutofill="no"
             android:background="@null" />
 
         <TextView
@@ -34,6 +36,11 @@
             android:gravity="start"
             android:padding="@dimen/keyline_4"
             android:text="@string/title_where_next" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/cities"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

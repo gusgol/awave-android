@@ -10,6 +10,7 @@ import androidx.core.widget.doAfterTextChanged
 import androidx.navigation.fragment.findNavController
 import tech.hiregus.awave.databinding.CreateItineraryFragmentBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import tech.hiregus.awave.data.City
 
 class CreateItineraryFragment : Fragment() {
 
@@ -52,6 +53,9 @@ class CreateItineraryFragment : Fragment() {
         binding.title.doAfterTextChanged {
             displayConfirm(!it.isNullOrBlank())
         }
+
+        // Cities
+        binding.cities.adapter = CitiesPagerAdapter(City.values().toList())
     }
 
     private fun displayConfirm(active: Boolean) {
@@ -63,7 +67,10 @@ class CreateItineraryFragment : Fragment() {
     }
 
     private fun confirm() {
-        viewModel.saveItinerary(binding.title.text.toString())
+        viewModel.saveItinerary(
+            title = binding.title.text.toString(),
+            cityIndex = binding.cities.currentItem
+        )
     }
 
 }
