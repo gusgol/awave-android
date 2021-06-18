@@ -12,7 +12,6 @@ object PlacesApi {
     const val V = "20200618"
 }
 
-
 fun providePlacesApi(): Retrofit {
     val client = OkHttpClient.Builder().apply {
         addInterceptor(
