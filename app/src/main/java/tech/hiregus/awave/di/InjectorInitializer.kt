@@ -15,7 +15,8 @@ class InjectorInitializer : Initializer<KoinApplication> {
                 listOf(
                     databaseModule,
                     itinerariesModule,
-                    homeModule
+                    homeModule,
+                    placesModule
                 )
             )
         }

@@ -6,10 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.core.widget.doAfterTextChanged
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import tech.hiregus.awave.databinding.CreateItineraryFragmentBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import tech.hiregus.awave.R
 import tech.hiregus.awave.data.City
 
 class CreateItineraryFragment : Fragment() {
@@ -67,10 +70,13 @@ class CreateItineraryFragment : Fragment() {
     }
 
     private fun confirm() {
+        val city = City.values()[binding.cities.currentItem]
         viewModel.saveItinerary(
             title = binding.title.text.toString(),
-            cityIndex = binding.cities.currentItem
+            city = city
         )
+        val bundle = bundleOf(SelectPlacesFragment.ARG_CITY to city)
+        binding.confirm.findNavController().navigate(R.id.action_selectCity_to_selectPlaces, bundle)
     }
 
 }

@@ -5,8 +5,16 @@ import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import tech.hiregus.awave.createitinerary.CreateItineraryViewModel
+import tech.hiregus.awave.createitinerary.SelectPlacesViewModel
+import tech.hiregus.awave.createitinerary.source.DefaultPlacesRepository
+import tech.hiregus.awave.createitinerary.source.PlacesDataSource
+import tech.hiregus.awave.createitinerary.source.PlacesRepository
+import tech.hiregus.awave.createitinerary.source.remote.PlacesRemoteDataSource
 import tech.hiregus.awave.data.AppDatabase
+import tech.hiregus.awave.data.City
 import tech.hiregus.awave.data.DB_NAME
+import tech.hiregus.awave.data.PlacesService
+import tech.hiregus.awave.data.api.providePlacesApi
 import tech.hiregus.awave.home.HomeViewModel
 import tech.hiregus.awave.itineraries.source.DefaultItinerariesRepository
 import tech.hiregus.awave.itineraries.source.ItinerariesDataSource
@@ -32,4 +40,11 @@ val itinerariesModule = module {
 
 val homeModule = module {
     viewModel { HomeViewModel(get()) }
+}
+
+val placesModule = module {
+    factory { providePlacesApi().create(PlacesService::class.java) }
+    factory<PlacesDataSource> { PlacesRemoteDataSource(get()) }
+    factory<PlacesRepository> { DefaultPlacesRepository(get()) }
+    viewModel { (city: City?) -> SelectPlacesViewModel(city, get()) }
 }

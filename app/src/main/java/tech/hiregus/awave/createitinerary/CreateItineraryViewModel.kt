@@ -9,8 +9,7 @@ import tech.hiregus.awave.itineraries.source.ItinerariesRepository
 
 class CreateItineraryViewModel(private val itinerariesRepository: ItinerariesRepository) : ViewModel() {
 
-    fun saveItinerary(title: String, cityIndex: Int) {
-        val city = City.values()[cityIndex]
+    fun saveItinerary(title: String, city: City) {
         viewModelScope.launch {
             itinerariesRepository.saveItinerary(Itinerary(title = title, city = city))
         }
